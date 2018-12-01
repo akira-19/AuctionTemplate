@@ -1,0 +1,165 @@
+<resources>
+    <string name="app_name">出品テンプレート</string>
+    <string name="title_activity_new_format">NewFormat</string>
+
+
+    <string-array name="formatSort">
+        <item>ジャンルを選択してください。</item>
+        <item>ファッション</item>
+        <item>スマホ、タブレット</item>
+        <item>PC</item>
+        <item>家電</item>
+        <item>DVD,Blu-ray</item>
+        <item>本、雑誌、漫画</item>
+        <item>その他</item>
+    </string-array>
+
+    <string name="keep">コピー</string>
+    <string name="keepForm">テンプレートとして保存</string>
+
+
+    <string name="details">【商品詳細】</string>
+    <string name="product">【商品詳細】</string>
+    <string name="name">商品名：</string>
+
+    <!--ブランド名-->
+    <string name="brand">ブランド：</string>
+
+    <!--サイズ-->
+    <string name="size">サイズ：</string>
+    <string-array name="sizeList">
+        <item>選択してください。</item>
+        <item>XSサイズ</item>
+        <item>Sサイズ</item>
+        <item>Mサイズ</item>
+        <item>Lサイズ</item>
+        <item>LLサイズ</item>
+        <item>XLサイズ</item>
+        <item>3Lサイズ</item>
+        <item>XXLサイズ</item>
+        <item>自分で入力する</item>
+    </string-array>
+
+
+    <string name="cm">cm</string>
+    <string name="size1">着丈：</string>
+    <string name="size2">肩幅：</string>
+    <string name="size3">身幅：</string>
+    <string name="size4">袖丈：</string>
+
+    <!--カラー-->
+    <string name="color">カラー：</string>
+    <string-array name="colorList">
+        <item>選択してください。</item>
+        <item>レッド</item>
+        <item>ブルー</item>
+        <item>グリーン</item>
+        <item>イエロー</item>
+        <item>ホワイト</item>
+        <item>ブラック</item>
+        <item>ゴールド</item>
+        <item>シルバー</item>
+        <item>自分で入力する</item>
+    </string-array>
+
+
+    <!--商品状態-->
+    <string name="condition">商品状態：</string>
+    <string-array name="conditionList">
+        <item>選択してください。</item>
+        <item>S 新品、試用、試着のみ</item>
+        <item>A 新古品</item>
+        <item>B 使用感が少ない状態の良い中古品</item>
+        <item>C 使用感が多少あるものの目立った汚れや傷のない中古品</item>
+        <item>D 使用感があり目立った汚れや傷がある中古品</item>
+        <item>自分で入力する</item>
+    </string-array>
+
+
+    <!--スマホ、タブレット*****************************************-->
+    <string name="phoneMaker">メーカー：</string>
+    <string name="phoneModel">機種：</string>
+    <string name="phoneSN">製造番号：</string>
+    <string name="phoneAC">付属品：</string>
+
+    <!--パソコン*****************************************-->
+    <!--家電*****************************************-->
+    <!--DVD*****************************************-->
+    <!--本*****************************************-->
+    <!--その他*****************************************-->
+
+
+    <!--値段-->
+    <string name="price">定価：</string>
+    <string name="yen">円</string>
+
+    <!--発送方法-->
+    <string name="shipping">【発送】</string>
+
+    <!--発送方法-->
+    <string name="ship">発送方法：</string>
+    <string-array name="shipList">
+        <item>選択してください。</item>
+        <item>クロネコヤマト</item>
+        <item>佐川急便</item>
+        <item>ゆうパック</item>
+        <item>メルカリ</item>
+    </string-array>
+
+    <!--料金-->
+    <string name="price2">発送料金：</string>
+
+
+    <!--支払い方法-->
+    <string name="check1">三菱東京UFJ銀行</string>
+    <string name="check2">三井住友銀行</string>
+    <string name="check3">ゆうちょ銀行</string>
+    <string name="check4">ｼﾞｬﾊﾟﾝﾈｯﾄ銀行</string>
+
+
+    <!--その他-->
+    <string name="information">【その他】</string>
+    <string name="others">【その他】</string>
+    <string name="payment">支払方法：</string>
+    <string name="comment">商品説明：</string>
+    <string name="new_format">出品テキストを作る</string>
+    <string name="kept_format">保存したテンプレートを使う</string>
+    <string name="phoneCheck1">充電器</string>
+    <string name="phoneCheck2">イヤホン</string>
+    <string name="phoneCheck3">箱（ケース）</string>
+    <string name="phoneCheck4">取扱説明書</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="makeDate">製造年月：</string>
+    <string name="DVDtitle">タイトル：</string>
+    <string name="author">作者：</string>
+    <string name="volume">巻</string>
+    <string name="fromTo">〜</string>
+    <string name="OS">OS：</string>
+    <string name="CPU">CPU：</string>
+    <string name="memory">メモリ：</string>
+    <string name="GB">GB</string>
+    <string name="HDD">HDD：</string>
+    <string name="display">モニター：</string>
+    <string name="inch">インチ</string>
+    <string name="model">モデル：</string>
+    <string name="appModel">型番：</string>
+    <string name="copy">本文をコピー</string>
+    <string name="saveAs">新しく保存</string>
+    <string name="save">上書き保存</string>
+
+    <!--実際に使用するID-->
+    <!--<string name="banner_ad_unit_id">ca-app-pub-8722318709170778/8312991520</string>-->
+    <!--<string name="anner_app_id">ca-app-pub-8722318709170778~2224604634</string>-->
+
+    <!--テストID-->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="explanation">使い方</string>
+    <string name="insert">本文に挿入</string>
+    <string name="check5">Yahoo決済</string>
+    <string name="check6">自分で入力</string>
+    <string name="volumes">巻数</string>
+
+
+</resources>

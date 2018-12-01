@@ -1,0 +1,1987 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.skyk2011.auctiontemplate.NewTemplate">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/adView"
+    android:orientation="vertical">
+
+    <!--入力エリア    -->
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/formatSort"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/formatSort"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+
+
+                <EditText
+                    android:id="@+id/format"
+                    android:layout_width="match_parent"
+                    android:scrollbars="vertical"
+                    android:layout_height="250dp"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/darker_gray"
+                    android:gravity="top|left"
+                    android:textColor="@android:color/background_light" />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/button_customize"
+                    android:onClick="newTemp"
+                    android:text="@string/keepForm" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/button_customize"
+                    android:onClick="Copy"
+                    android:text="@string/keep" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/product"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <!--ファッション用テンプレート-->
+
+            <LinearLayout
+                android:id="@+id/fashion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--商品名-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/name"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+                <!--ブランド-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/brand"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/brand"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+                <!--サイズ-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/size"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/sizeList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/sizeList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--着丈など            -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--着丈-->
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/size1"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/size1"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/cm"
+                        android:textColor="@android:color/black" />
+
+                    <!--肩幅-->
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/size2"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/size2"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/cm"
+                        android:textColor="@android:color/black" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--身幅-->
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/size3"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/size3"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/cm"
+                        android:textColor="@android:color/black" />
+
+                    <!--袖丈-->
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/size4"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/size4"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/cm"
+                        android:textColor="@android:color/black" />
+
+                </LinearLayout>
+
+                <!--カラー-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/color"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/colorList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/colorList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <!--商品状態-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/condition"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/conditionList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/conditionList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <!--定価-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/price"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/price"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/yen"
+                        android:textColor="@android:color/black" />
+
+
+                </LinearLayout>
+
+                <!--コメント-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/comment"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/comment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <!--ファッション用テンプレート-->
+
+            <!--スマホ用テンプレート-->
+
+            <LinearLayout
+                android:id="@+id/smartPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--メーカー-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/phoneMaker"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/phoneMaker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+                <!--機種名-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/phoneModel"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/phoneModel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+                <!--色-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/color"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/phoneColorList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/colorList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--製造番号-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/phoneSN"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/phoneSN"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+
+                <!--付属品-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/phoneAC"
+                        android:textColor="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/phoneCheck1"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/phoneCheck1" />
+
+                        <CheckBox
+                            android:id="@+id/phoneCheck2"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/phoneCheck2" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <!--付属品2行目-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text=" "
+                        android:textColor="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/phoneCheck3"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/phoneCheck3" />
+
+                        <CheckBox
+                            android:id="@+id/phoneCheck4"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/phoneCheck4" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <!--商品状態-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/condition"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/SPconditionList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/conditionList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <!--コメント-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/comment"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/commentPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <!--スマホ用テンプレート-->
+
+
+            <!--PC-->
+            <LinearLayout
+                android:id="@+id/PC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!--メーカー-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/phoneMaker"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/PCmaker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+                <!--モデル-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/model"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/PCmodel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+                <!--OS-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/OS"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/PCOS"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+                <!--色-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/color"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/PCColorList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/colorList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <!--CPU-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/CPU"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/CPU"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+                <!--メモリ-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/memory"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/memory"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/GB"
+                        android:textColor="@android:color/black" />
+
+
+                </LinearLayout>
+
+
+                <!--HDD-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/HDD"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/HDD"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/GB"
+                        android:textColor="@android:color/black" />
+
+
+                </LinearLayout>
+
+                <!--ディスプレイ-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/display"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/display"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/inch"
+                        android:textColor="@android:color/black" />
+
+
+
+                </LinearLayout>
+
+                <!--商品状態-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/condition"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/PCconditionList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/conditionList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <!--コメント-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/comment"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/PCComment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout><!--PC end -->
+
+
+            <!--家電テンプレート-->
+            <LinearLayout
+                android:id="@+id/appliance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--メーカー-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/phoneMaker"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/appMaker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+                <!--型番-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/appModel"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/appModel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+                <!--製造年月-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/makeDate"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/makeYear"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp" />
+
+                    <TextView
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/year"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/makeMonth"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp" />
+
+                    <TextView
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/month"
+                        android:textColor="@android:color/black" />
+
+
+                </LinearLayout>
+
+                <!--色：-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/color"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/appColorList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/colorList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <!--付属品：-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/phoneAC"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/appAC"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+                <!--商品状態：-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/condition"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/AppConditionList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/conditionList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--コメント-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/comment"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/appComment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+            </LinearLayout><!--家電 end-->
+
+
+            <!--DVDテンプレート-->
+
+            <LinearLayout
+                android:id="@+id/DVD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!--タイトル：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/DVDtitle"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/DVDtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+                <!--商品状態：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/condition"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/DVDConditionList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/conditionList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--コメント-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/comment"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/DVDcomment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--DVD end-->
+
+            <!--本テンプレート-->
+            <LinearLayout
+                android:id="@+id/book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--タイトル：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/DVDtitle"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/bookTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+                <!--著者：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/author"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/bookAuthor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+                <!--巻数：-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/volumes"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/firstVolume"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp" />
+
+                    <TextView
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/volume"
+                        android:textColor="@android:color/black" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/fromTo"
+                        android:textColor="@android:color/black" />
+
+                    <EditText
+                        android:id="@+id/secondVolume"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp" />
+
+                    <TextView
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/volume"
+                        android:textColor="@android:color/black" />
+
+
+                </LinearLayout>
+
+
+
+                <!--商品状態：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/condition"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/bookConditionList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/conditionList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <!--コメント-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/comment"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/bookComment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout><!--本 end-->
+
+            <!--その他テンプレート-->
+            <LinearLayout
+                android:id="@+id/others"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!--商品名：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/name"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/nameOthers"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+                <!--色：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/color"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/othersColorList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/colorList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+                <!--状態：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:text="@string/condition"
+                        android:textColor="@android:color/black" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/spinner_customize">
+
+                        <Spinner
+                            android:id="@+id/othersConditionList"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/conditionList"
+                            android:padding="3sp"
+                            android:spinnerMode="dialog" />
+                        //android:scrollIndicators="none"
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--コメント-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="right"
+                        android:text="@string/comment"
+                        android:textColor="@android:color/black" />
+
+
+                    <EditText
+                        android:id="@+id/othersComment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout><!--その他 end-->
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/shipping"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <!--発送方法-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/ship"
+                    android:textColor="@android:color/black" />
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_customize">
+
+                    <Spinner
+                        android:id="@+id/shipList"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/shipList"
+                        android:padding="3sp"
+                        android:spinnerMode="dialog" />
+                    //android:scrollIndicators="none"
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--金額-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="right"
+                    android:text="@string/price2"
+                    android:textColor="@android:color/black" />
+
+
+                <EditText
+                    android:id="@+id/shipPrice"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/yen"
+                    android:textColor="@android:color/black" />
+
+
+            </LinearLayout>
+
+            <!--その他-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/others"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <!--支払い方法-->
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="right"
+                android:text="@string/payment"
+                android:textColor="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/check1"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check1" />
+
+                <CheckBox
+                    android:id="@+id/check2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check2" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text=" "
+                    android:textColor="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/check3"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/check3" />
+
+                    <CheckBox
+                        android:id="@+id/check4"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/check4" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text=" "
+                    android:textColor="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/check5"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/check5" />
+
+                    <CheckBox
+                        android:id="@+id/check6"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/check6" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_customize"
+                android:onClick="Insert"
+                android:text="@string/insert" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+
+
+
+</RelativeLayout>
